@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx
+    ports:
+    - "80:80"
+    volumes:
+    - ./flask-redis/front/:/usr/share/nginx/html:ro
+
+  web:
+    image: chaberb/flask-redis
+    depends_on:
+    - db
+    volumes:
+    - ./flask-redis:/var/www/app
+    ports:
+    - "5000:5000"
+
+  db:
+    image: redis
