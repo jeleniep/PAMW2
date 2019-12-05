@@ -7,10 +7,17 @@
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel --presets es2015 -d lib/ src"        
+    "build": "babel --presets es2015 -d lib/ src && node lib/server.js"
   },
   "dependencies": {
-    "express": "^4.16.1"
+    "async": "^3.1.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.1",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "node-cmd": "^3.0.0",
+    "utils": "^0.3.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

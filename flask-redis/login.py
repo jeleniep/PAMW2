@@ -7,9 +7,7 @@ class Login:
     
     def generate_uuid(self):
         new_uuid = uuid.uuid4()
-        self.redis_conn.hset('sessions', str(new_uuid), 'ELO')
         while self.redis_conn.hget('sessions', str(new_uuid)):
-            print("TEEEEEEEEEEEEEEEEEEEEEST", flush=True)
             new_uuid = uuid.uuid4()
         return str(new_uuid)
 

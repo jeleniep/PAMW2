@@ -7,13 +7,23 @@
     <script src="/static/script.js"></script>
 </head>
 <body>
-  <form id="pdfForm" action="http://localhost:5000/login" method="POST" enctype="multipart/form-data">
+  <a class="logout" href="http://localhost:5000/logout">Wyloguj</a>
+  {% if files %}
+    <p>Lista plików:</p>
+  {% endif %}
+  <ul>
+      {% for file in files %}
+          <li><a href="http://localhost:5000/getPdf?name={{ file }}">{{ file }}</a></li>
+      {% endfor %}
+  </ul>
+
+  <form id="pdfForm" action="http://localhost:5000/addPdf" method="POST" enctype="multipart/form-data">
     <h1>Zarządzanie plikami pdf</h1>
     <fieldset>     
       <label class="" for="image">Dodaj plik</label>
-      <input type="file" name="photo" id="image">
+      <input type="file" name="pdf" >
     </fieldset>
-    <button type="submit" id="submitButton">Zarejestruj</button>
+    <button type="submit" id="submitButton">Dodaj plik</button>
 </form>
 </body>
 </html>

@@ -9,8 +9,7 @@ window.onload = () => {
   login.addEventListener("input", checkLogin);
   console.log(form)
   form.addEventListener("submit", function(e) {
-    console.log("kupa")
-    // e.preventDefault();
+   // e.preventDefault();
     // window.location.href = "test.php";
   });
 
